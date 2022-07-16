@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sort Element in Array</title>
+    <script>
+    //   let data = [40,30,12,25];
+    let data = [34,3,1,25,54,12,89,5,76,789];
+
+
+      for(i=0;i<data.length;i++){
+
+        for(j=0;j<data.length;j++){
+      console.warn(data)
+
+            if(data[j]>data[j+1]){
+                let temp=data[j];
+                data[j]=data[j+1];
+                data[j+1]=temp;
+            }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Array Sorting in JavaScript</h1>
+  </body>
+</html>
