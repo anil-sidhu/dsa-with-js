@@ -1,0 +1,30 @@
+<script>
+  class List {
+    constructor(data) {
+      this.head = {
+        value: data,
+        next: null,
+      };
+      this.tail=this.head;
+      this.length=1;
+    }
+    append(newData){
+        const newNode={
+            value:newData,
+            next:null
+        };
+        this.tail.next=newNode;
+        this.tail=newNode;
+      this.length+=1;
+
+    }
+  }
+
+  const dummy = new List(10);
+  dummy.append(40)
+  dummy.append(50)
+
+  console.warn(dummy)
+
+
+</script>
