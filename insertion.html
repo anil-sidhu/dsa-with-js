@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Insertion Sort in JavaScript</title>
+    <script>
+      let arr = [12, 11, 13, 5, 6];
+      function insertionSort(data) {
+        let i, current, j;
+        for (i = 1; i < data.length; i++) {
+          current = data[i];
+          j = i - 1;
+          while(j>=0 && data[j]>current){
+            data[j+1]=data[j];
+            j=j-1;
+          }
+          data[j+1]=current
+        }
+      }
+
+      insertionSort(arr);
+      console.warn(arr)
+    </script>
+  </head>
+  <body>
+    <h1>Insertion Sort in JavaScript</h1>
+  </body>
+</html>

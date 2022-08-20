@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Object Data Structure</title>
+    <script>
+        let data ={
+            name:'anil',
+            age:28,
+            mail:"abc@test.com",
+            getName:function(){
+               return this.name;
+            }
+        }
+        data.contact=12345;
+        data.name="peter"
+
+        // for(x in data){
+        //     console.warn(data[x])
+        // }
+
+        // console.warn(Object.keys(data))
+        // console.warn(Object.values(data))
+
+        console.warn(Object.entries(data))
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Object Data Structure</h1>
+  </body>
+</html>

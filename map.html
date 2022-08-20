@@ -1,0 +1,23 @@
+<script>
+  let data = new Map([
+    [100, "hundred"],
+    [true, "yes"],
+    [undefined, "okay"],
+  ]);
+
+  data.set("day", "sunday").set("color", "red");
+
+  console.warn(data.get(100));
+  console.warn(data.get(undefined));
+  console.warn(data.size);
+
+  for (x of data) {
+    console.warn(x[1]);
+  }
+
+  data.forEach((val, key) => {
+    console.warn(val, key);
+  });
+
+  console.warn(data.entries());
+</script>

@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Descending Order with Selection Sorting</title>
+    <script>
+    let items = [20, 12, 53, 3,56,78,0,5,89,34];
+    //   function selectionSort_M1(data) {
+    //     let minId;
+    //     for (let i = data.length-1; i >=0; i--) {
+    //         console.warn(i)
+    //       minId = i;
+    //       for (let j = i - 1; j >=0 ;j--) {
+    //         if (data[j] < data[minId]) {
+    //           minId = j;
+    //         }
+    //       }
+    //       let temp = data[minId];
+    //       data[minId] = data[i];
+    //       data[i] = temp;
+    //     }
+    //   }
+
+    function selectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] > data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+      
+      selectionSort(items);
+      console.warn(items)
+    </script>
+  </head>
+  <body>
+    <h1>Descending Order with Selection Sorting</h1>
+  </body>
+</html>
