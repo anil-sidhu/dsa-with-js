@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title></title>
+    <script>
+      {
+        var data = new WeakMap();
+        // let data2 = new Map();
+
+        let x = { a: [1, 3] };
+        // let x2 = { b: [1, 3] };
+
+        data.set(x, "test2");
+        // data2.set(x2, "test2");
+
+        x = null;
+        // console.warn(data.size());
+
+        // console.warn(data2);
+      }
+      console.warn(data)
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+  </body>
+</html>
