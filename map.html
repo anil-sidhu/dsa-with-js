@@ -1,23 +1,29 @@
-<script>
-  let data = new Map([
-    [100, "hundred"],
-    [true, "yes"],
-    [undefined, "okay"],
-  ]);
+<html>
+  <head>
+    <title>Map DSA with JavaScript</title>
+    <script>
+        let data = new Map([
+            ['name','Anil'],
+            [true,'bool key'],
+            [100,'hundred']
+        ]);
 
-  data.set("day", "sunday").set("color", "red");
+        data.set('color','green');
+        // console.warn(data.size)
+        // console.warn(data.has(100))
+        // console.warn(data.get(100))
+        // data.clear()
+        // console.warn(data)
 
-  console.warn(data.get(100));
-  console.warn(data.get(undefined));
-  console.warn(data.size);
-
-  for (x of data) {
-    console.warn(x[1]);
-  }
-
-  data.forEach((val, key) => {
-    console.warn(val, key);
-  });
-
-  console.warn(data.entries());
-</script>
+        // for(x of data){
+        //     console.warn(x)
+        // }
+        data.forEach((val,key)=>{
+            console.warn(key)
+        })
+    </script>
+  </head>
+  <body>
+    <h1>Map DSA with JavaScript</h1>
+  </body>
+</html>
