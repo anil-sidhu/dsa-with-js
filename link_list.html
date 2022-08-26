@@ -24,25 +24,27 @@
           let counter = 0;
           let currentNode = this.head;
           while (counter < this.size) {
-            console.warn(currentNode);
+            // console.warn(currentNode);
             currentNode = currentNode.next;
             counter++;
+          }
+        }
+        deleteNode(index){
+          let counter=1;
+          let lead = this.head;
+          if(index===1){
+            this.head=this.head.next;
+          }else{
+            while(counter<index-1){
+              lead=lead.next;
+              counter++
+            }
+            let nextNode= lead.next.next;
+            lead.next=nextNode;
+            console.warn(lead)
           }
         }
 
-        insertNode(index, value) {
-          let counter = 1;
-          let currentNode = this.head;
-          while (counter != index) {
-            counter++;
-            currentNode = currentNode.next;
-          }
-          let nextNode = currentNode.next;
-          currentNode.next = {
-            value: value,
-            next: nextNode,
-          };
-        }
       }
 
       let list = new List(200);
@@ -52,9 +54,9 @@
       list.appendNode(600);
       list.appendNode(700);
       list.traversing();
-      list.insertNode(3, 4000);
+      list.deleteNode(1)
 
-      // console.warn(list);
+      console.warn(list);
     </script>
   </head>
   <body>
