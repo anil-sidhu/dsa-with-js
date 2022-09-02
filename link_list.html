@@ -29,20 +29,35 @@
             counter++;
           }
         }
-        deleteNode(index){
-          let counter=1;
+        deleteNode(index) {
+          let counter = 1;
           let lead = this.head;
-          if(index===1){
-            this.head=this.head.next;
-          }else{
-            while(counter<index-1){
-              lead=lead.next;
-              counter++
+          if (index === 1) {
+            this.head = this.head.next;
+          } else {
+            while (counter < index - 1) {
+              lead = lead.next;
+              counter++;
             }
-            let nextNode= lead.next.next;
-            lead.next=nextNode;
-            console.warn(lead)
+            let nextNode = lead.next.next;
+            lead.next = nextNode;
+            console.warn(lead);
           }
+        }
+        searchNode(data){
+          let result = undefined;
+          let lead= this.head;
+          let loop=true;
+          while(loop){
+            lead=lead.next;
+            // console.warn(lead)
+            loop = !!lead;
+            if(loop && lead.value === data){
+              loop=false;
+              result=lead;
+            }
+          }
+          console.warn(result)
         }
 
       }
@@ -54,9 +69,10 @@
       list.appendNode(600);
       list.appendNode(700);
       list.traversing();
-      list.deleteNode(1)
+      list.deleteNode(1);
+      list.searchNode(900)
 
-      console.warn(list);
+      // console.warn(list);
     </script>
   </head>
   <body>

@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Binary Search Tree</title>
+    <script>
+      class Node {
+        constructor(val) {
+          this.value = val;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      class BSTree {
+        constructor() {
+          this.root = null;
+        }
+
+        isTreeEmpty() {
+          return this.root === null;
+        }
+      }
+
+      let bst = new BSTree();
+      console.warn(bst.isTreeEmpty());
+    </script>
+  </head>
+  <body>
+    <h1>Binary Search Tree</h1>
+  </body>
+</html>
