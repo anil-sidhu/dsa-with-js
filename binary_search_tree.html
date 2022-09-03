@@ -41,6 +41,17 @@
             }
           }
         }
+        search(root, val) {
+          if (root === null) {
+            return false;
+          } else if (root.value === val) {
+            return true;
+          } else if (root.value > val) {
+            return this.search(root.left, val);
+          } else {
+            return this.search(root.right, val);
+          }
+        }
       }
 
       let bst = new BSTree();
@@ -51,11 +62,9 @@
       bst.makeTree(30);
       bst.makeTree(40);
       bst.makeTree(23);
+      console.warn(bst.search(bst.root, 11))
 
-
-
-
-      console.warn(bst);
+      // console.warn(bst.root);
     </script>
   </head>
   <body>
