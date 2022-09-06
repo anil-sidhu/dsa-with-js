@@ -52,31 +52,44 @@
             return this.search(root.right, val);
           }
         }
-        preOrder(root){
-          if(root){
-            console.warn(root.value)
+        preOrder(root) {
+          if (root) {
+            console.warn(root.value);
             this.preOrder(root.left);
-            this.preOrder(root.right)
+            this.preOrder(root.right);
           }
         }
 
-        inOrder(root){
-          if(root){
+        inOrder(root) {
+          if (root) {
             this.inOrder(root.left);
-            console.warn(root.value)
-            this.inOrder(root.right)
+            console.warn(root.value);
+            this.inOrder(root.right);
           }
         }
 
-        postOrder(root){
-          if(root){
+        postOrder(root) {
+          if (root) {
             this.postOrder(root.left);
-            this.postOrder(root.right)
-            console.warn(root.value)
+            this.postOrder(root.right);
+            console.warn(root.value);
           }
         }
-        
 
+        bfsTraversing() {
+          let queue = [];
+          queue.push(this.root);
+          while (queue.length) {
+            let current = queue.shift();
+            if (current.left) {
+              queue.push(current.left);
+            }
+            if (current.right) {
+              queue.push(current.right);
+            }
+            console.warn(current.value);
+          }
+        }
       }
 
       let bst = new BSTree();
@@ -90,9 +103,10 @@
       bst.makeTree(23);
       // bst.preOrder(bst.root)
       // bst.inOrder(bst.root)
-      bst.postOrder(bst.root)
+      // bst.postOrder(bst.root);
       // console.warn(bst.search(bst.root, 11));
-      console.warn(bst.root);
+      bst.bfsTraversing(bst.root);
+      console.warn();
     </script>
   </head>
   <body>
