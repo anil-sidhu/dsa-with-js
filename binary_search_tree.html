@@ -90,6 +90,55 @@
             console.warn(current.value);
           }
         }
+
+        minValue(root) {
+          if (!root.left) {
+            return root.value;
+          } else {
+            return this.minValue(root.left);
+          }
+        }
+
+        maxValue(root) {
+          if (!root.right) {
+            return root.value;
+          } else {
+            return this.maxValue(root.right);
+          }
+        }
+
+        maxValue(root) {
+          if (!root.right) {
+            return root.value;
+          } else {
+            return this.maxValue(root.right);
+          }
+        }
+
+        removeData(value) {
+          this.root = this.deleteNode(this.root, value);
+        }
+        deleteNode(root,value) {
+          if (root === null) {
+            return null;
+          }
+          if (value < root.value) {
+            root.left = this.deleteNode(root.left, value);
+          } else if (value > root.value) {
+            root.right = this.deleteNode(root.right, value);
+          } else {
+            if (!root.left && !root.right) {
+              return null;
+            } else if (!root.left) {
+              return root.right;
+            } else if (!root.right) {
+              return root.left;
+            }
+            root.value= this.minValue(root.right);
+            root.right=this.deleteNode(root.right,root.value)
+          }
+          return root;
+        }
       }
 
       let bst = new BSTree();
@@ -105,8 +154,11 @@
       // bst.inOrder(bst.root)
       // bst.postOrder(bst.root);
       // console.warn(bst.search(bst.root, 11));
-      bst.bfsTraversing(bst.root);
-      console.warn();
+      bst.removeData(20);
+      // bst.bfsTraversing(bst.root);
+      console.warn(bst.root)
+
+
     </script>
   </head>
   <body>
