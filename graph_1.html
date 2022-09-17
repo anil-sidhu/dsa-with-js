@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Graph</title>
+    <script>
+        class Graph{
+            constructor(){
+                this.data={}
+            }
+
+            addVertex(vertex){
+               if(!this.data[vertex]){
+                this.data[vertex]=[];
+               }
+            }
+        } 
+
+        const graph1= new Graph();
+        graph1.addVertex("A");
+        graph1.addVertex("B");
+        graph1.addVertex("C");
+        graph1.addVertex("D");
+
+        console.warn(graph1.data)
+    </script>
+  </head>
+  <body>
+    <h1>Add vertex in Graph</h1>
+  </body>
+</html>
