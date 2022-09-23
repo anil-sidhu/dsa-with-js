@@ -3,25 +3,45 @@
   <head>
     <title>Graph</title>
     <script>
-        class Graph{
-            constructor(){
-                this.data={}
-            }
+      class Graph {
+        constructor() {
+          this.data = {};
+        }
 
-            addVertex(vertex){
-               if(!this.data[vertex]){
-                this.data[vertex]=[];
-               }
-            }
-        } 
+        addVertex(vertex) {
+          if (!this.data[vertex]) {
+            this.data[vertex] = [];
+          }
+        }
 
-        const graph1= new Graph();
-        graph1.addVertex("A");
-        graph1.addVertex("B");
-        graph1.addVertex("C");
-        graph1.addVertex("D");
+        addEdge(v1, v2) {
+          if (!this.data[v1]) {
+            this.addVertex(v1);
+          }
+          if (!this.data[v2]) {
+            this.addVertex(v2);
+          }
 
-        console.warn(graph1.data)
+          this.data[v1].push(v2)
+          this.data[v2].push(v1)
+
+        }
+      }
+
+      const graph1 = new Graph();
+      graph1.addVertex("A");
+      graph1.addVertex("B");
+      graph1.addVertex("C");
+      graph1.addVertex("D");
+      graph1.addEdge("A", "B");
+     graph1.addEdge("A", "C");
+     graph1.addEdge("B", "C");
+     graph1.addEdge("B", "D");
+
+
+
+
+      console.warn(graph1.data);
     </script>
   </head>
   <body>
