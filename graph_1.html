@@ -24,17 +24,29 @@
           this.data[v1].push(v2);
           this.data[v2].push(v1);
         }
-        removeEdge(v1,v2){
+        removeEdge(v1, v2) {
           // console.warn("remove",this.data[v1])
-           this.data[v1] =this.data[v1].filter((item)=>{
-            return item!=v2 ;
+          this.data[v1] = this.data[v1].filter((item) => {
+            return item != v2;
           });
 
-          this.data[v2] =this.data[v2].filter((item)=>{
-            return item!=v1 ;
+          this.data[v2] = this.data[v2].filter((item) => {
+            return item != v1;
           });
-
         }
+
+        removeVertex(vertex){
+          if(!this.data[vertex]){
+            return ;
+          }
+          for(let item of this.data[vertex])
+          {
+            this.removeEdge(vertex,item)
+          }
+
+          delete this.data[vertex];
+        }
+       
       }
 
       const graph1 = new Graph();
@@ -48,9 +60,12 @@
       graph1.addEdge("A", "C");
       graph1.addEdge("B", "C");
       graph1.addEdge("B", "D");
-      
-      graph1.removeEdge("A","B");
-      graph1.removeEdge("B","D");
+
+      // graph1.removeEdge("A","B");
+      // graph1.removeEdge("B","D");
+
+      // graph1.removeVertex('A')
+      graph1.removeVertex('D')
 
 
       console.warn(graph1.data);
